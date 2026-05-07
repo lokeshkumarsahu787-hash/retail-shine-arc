@@ -9,38 +9,248 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WishlistRouteImport } from './routes/wishlist'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ForgotRouteImport } from './routes/forgot'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AccountRouteImport } from './routes/account'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsIdRouteImport } from './routes/products.$id'
 
+const WishlistRoute = WishlistRouteImport.update({
+  id: '/wishlist',
+  path: '/wishlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotRoute = ForgotRouteImport.update({
+  id: '/forgot',
+  path: '/forgot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsIdRoute = ProductsIdRouteImport.update({
+  id: '/products/$id',
+  path: '/products/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/forgot': typeof ForgotRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/wishlist': typeof WishlistRoute
+  '/products/$id': typeof ProductsIdRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/forgot': typeof ForgotRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/wishlist': typeof WishlistRoute
+  '/products/$id': typeof ProductsIdRoute
+  '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/forgot': typeof ForgotRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/wishlist': typeof WishlistRoute
+  '/products/$id': typeof ProductsIdRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/account'
+    | '/admin'
+    | '/cart'
+    | '/checkout'
+    | '/forgot'
+    | '/login'
+    | '/register'
+    | '/wishlist'
+    | '/products/$id'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/account'
+    | '/admin'
+    | '/cart'
+    | '/checkout'
+    | '/forgot'
+    | '/login'
+    | '/register'
+    | '/wishlist'
+    | '/products/$id'
+    | '/products'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/account'
+    | '/admin'
+    | '/cart'
+    | '/checkout'
+    | '/forgot'
+    | '/login'
+    | '/register'
+    | '/wishlist'
+    | '/products/$id'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AccountRoute: typeof AccountRoute
+  AdminRoute: typeof AdminRoute
+  CartRoute: typeof CartRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ForgotRoute: typeof ForgotRoute
+  LoginRoute: typeof LoginRoute
+  RegisterRoute: typeof RegisterRoute
+  WishlistRoute: typeof WishlistRoute
+  ProductsIdRoute: typeof ProductsIdRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wishlist': {
+      id: '/wishlist'
+      path: '/wishlist'
+      fullPath: '/wishlist'
+      preLoaderRoute: typeof WishlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot': {
+      id: '/forgot'
+      path: '/forgot'
+      fullPath: '/forgot'
+      preLoaderRoute: typeof ForgotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +258,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/$id': {
+      id: '/products/$id'
+      path: '/products/$id'
+      fullPath: '/products/$id'
+      preLoaderRoute: typeof ProductsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AccountRoute: AccountRoute,
+  AdminRoute: AdminRoute,
+  CartRoute: CartRoute,
+  CheckoutRoute: CheckoutRoute,
+  ForgotRoute: ForgotRoute,
+  LoginRoute: LoginRoute,
+  RegisterRoute: RegisterRoute,
+  WishlistRoute: WishlistRoute,
+  ProductsIdRoute: ProductsIdRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
