@@ -41,7 +41,7 @@ function ProductsPage() {
   const view = filtered.slice((page - 1) * PAGE, page * PAGE);
 
   const update = (patch: Partial<Search>) =>
-    nav({ search: (prev) => ({ ...prev, ...patch, page: 1 }) as never });
+    nav({ search: (prev: Search) => ({ ...prev, ...patch, page: 1 }) as never });
 
   return (
     <div className="container-x py-12">
@@ -98,7 +98,7 @@ function ProductsPage() {
           {pages > 1 && (
             <div className="mt-12 flex justify-center gap-2">
               {Array.from({ length: pages }, (_, i) => i + 1).map((n) => (
-                <button key={n} onClick={() => nav({ search: (p) => ({ ...p, page: n }) as never })}
+                <button key={n} onClick={() => nav({ search: (p: Search) => ({ ...p, page: n }) as never })}
                   className={`size-10 rounded-full text-sm ${n === page ? "bg-foreground text-background" : "hover:bg-surface"}`}>
                   {n}
                 </button>
