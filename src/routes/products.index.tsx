@@ -67,7 +67,7 @@ function ProductsPage() {
           </div>
           <div>
             <h3 className="text-xs uppercase tracking-widest mb-3">Price · up to ${range}</h3>
-            <input type="range" min={0} max={500} step={25} value={range}
+            <input aria-label={`Maximum price: $${range}`} type="range" min={0} max={500} step={25} value={range}
               onChange={(e) => setRange(Number(e.target.value))}
               onMouseUp={(e) => update({ max: Number((e.target as HTMLInputElement).value) })}
               onTouchEnd={(e) => update({ max: Number((e.target as HTMLInputElement).value) })}
@@ -78,7 +78,7 @@ function ProductsPage() {
         <div>
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm text-muted-foreground">{filtered.length} products</p>
-            <select value={search.sort} onChange={(e) => update({ sort: e.target.value })}
+            <select aria-label="Sort products" value={search.sort} onChange={(e) => update({ sort: e.target.value })}
               className="bg-surface text-sm rounded-full px-4 h-10 outline-none">
               <option value="featured">Featured</option>
               <option value="price-asc">Price: low to high</option>

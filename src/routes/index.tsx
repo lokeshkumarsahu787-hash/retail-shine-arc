@@ -29,7 +29,7 @@ function Index() {
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9 }} className="md:col-span-6">
-          <div className="relative overflow-hidden rounded-3xl aspect-[4/5] md:aspect-[5/6]">
+          <div className="relative overflow-hidden rounded-3xl aspect-4/5 md:aspect-5/6">
             <img src={hero} alt="Featured" className="w-full h-full object-cover" width={1600} height={1024} />
           </div>
         </motion.div>
@@ -44,7 +44,7 @@ function Index() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {categories.slice(1).map((c) => (
             <Link key={c} to="/products" search={{ category: c } as never}
-              className="aspect-[4/3] md:aspect-square rounded-2xl bg-surface grid place-items-center text-sm hover:bg-accent hover:text-accent-foreground transition-colors hover-lift">
+              className="aspect-4/3 md:aspect-square rounded-2xl bg-surface grid place-items-center text-sm hover:bg-accent hover:text-accent-foreground transition-colors hover-lift">
               {c}
             </Link>
           ))}

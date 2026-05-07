@@ -57,15 +57,15 @@ function Detail() {
 
           <div className="mt-8 flex items-center gap-4">
             <div className="flex items-center bg-surface rounded-full">
-              <button onClick={() => setQty(Math.max(1, qty - 1))} className="p-3"><Minus className="size-4" /></button>
+              <button aria-label="Decrease quantity" onClick={() => setQty(Math.max(1, qty - 1))} className="p-3"><Minus className="size-4" /></button>
               <span className="w-8 text-center text-sm">{qty}</span>
-              <button onClick={() => setQty(qty + 1)} className="p-3"><Plus className="size-4" /></button>
+              <button aria-label="Increase quantity" onClick={() => setQty(qty + 1)} className="p-3"><Plus className="size-4" /></button>
             </div>
             <button onClick={() => { add(product.id, qty); toast.success(`Added ${qty} × ${product.name}`); }}
               className="flex-1 h-12 rounded-full bg-foreground text-background text-sm hover-lift">
               Add to bag — ${product.price * qty}
             </button>
-            <button onClick={() => toggleWish(product.id)} className="size-12 rounded-full bg-surface grid place-items-center hover-lift">
+            <button aria-label={wished ? "Remove from wishlist" : "Add to wishlist"} onClick={() => toggleWish(product.id)} className="size-12 rounded-full bg-surface grid place-items-center hover-lift">
               <Heart className={`size-4 ${wished ? "fill-accent text-accent" : ""}`} />
             </button>
           </div>

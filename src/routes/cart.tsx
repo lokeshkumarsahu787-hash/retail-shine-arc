@@ -43,9 +43,9 @@ function CartPage() {
                 </div>
                 <div className="mt-4 flex items-center justify-between">
                   <div className="flex items-center bg-surface rounded-full">
-                    <button onClick={() => setQty(i.id, i.qty - 1)} className="p-2"><Minus className="size-3.5" /></button>
+                    <button aria-label={`Decrease quantity of ${i.product.name}`} onClick={() => setQty(i.id, i.qty - 1)} className="p-2"><Minus className="size-3.5" /></button>
                     <span className="w-6 text-center text-sm">{i.qty}</span>
-                    <button onClick={() => setQty(i.id, i.qty + 1)} className="p-2"><Plus className="size-3.5" /></button>
+                    <button aria-label={`Increase quantity of ${i.product.name}`} onClick={() => setQty(i.id, i.qty + 1)} className="p-2"><Plus className="size-3.5" /></button>
                   </div>
                   <button onClick={() => remove(i.id)} className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1">
                     <X className="size-3" /> Remove

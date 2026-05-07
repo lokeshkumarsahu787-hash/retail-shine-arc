@@ -65,8 +65,8 @@ function Admin() {
                 <td className="p-4">${p.price}</td>
                 <td className="p-4">{p.stock}</td>
                 <td className="p-4 text-right">
-                  <button onClick={() => setEdit(p)} className="p-2 hover:bg-background rounded-lg"><Pencil className="size-4" /></button>
-                  <button onClick={() => { setList(list.filter((x) => x.id !== p.id)); toast.success("Deleted"); }} className="p-2 hover:bg-background rounded-lg">
+                  <button aria-label={`Edit ${p.name}`} onClick={() => setEdit(p)} className="p-2 hover:bg-background rounded-lg"><Pencil className="size-4" /></button>
+                  <button aria-label={`Delete ${p.name}`} onClick={() => { setList(list.filter((x) => x.id !== p.id)); toast.success("Deleted"); }} className="p-2 hover:bg-background rounded-lg">
                     <Trash2 className="size-4" />
                   </button>
                 </td>
